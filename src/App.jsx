@@ -1,15 +1,20 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
 import Footer from "./components/Footer";
-import Register from "./components/Register";
+import HomeDinamico from "./components/HomeDinamico";
+
+/* import Home from "./components/Home"; */
+/* import Register from "./components/Register"; */
 
 function App() {
+
   return (
     <>
       <Navbar />
-      <Register />
-      <Home />
+      {/* <Register /> */}
+      {/* <Home /> */}
+      <HomeDinamico />
       <Footer />
     </>
   );
