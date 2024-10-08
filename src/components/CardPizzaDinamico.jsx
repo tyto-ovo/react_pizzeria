@@ -7,6 +7,7 @@ const CardPizzaDinamico = ({ productInfo }) => {
   ));
 
   return (
+    
     <Card /* style={{ width: "18rem" }} */>
       <Card.Img variant="top" src={productInfo.image} />
       <Card.Body>
@@ -23,7 +24,7 @@ const CardPizzaDinamico = ({ productInfo }) => {
           Ver Mas
         </Button>
         <Button variant="primary" className="sepbu">
-          Añadir
+          Añadir al Carro
         </Button>
       </Card.Body>
     </Card>

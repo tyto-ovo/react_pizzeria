@@ -57,3 +57,34 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+.carro {
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.carro img {
+  width: 18rem;
+  margin-right: 20px;
+  border-radius: 10%;
+}
+.carrito {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carrito button {
+  margin: 5px;
+  width: 50px;
+}
+.modCant {
+  display: flex;
+  flex-direction: row;
+}
+.modCant p {
+  margin-top: 10px;
+}
+h3 {
+  padding: 5px;
+}
