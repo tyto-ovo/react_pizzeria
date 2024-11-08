@@ -1,13 +1,13 @@
 import { Button, Card } from "react-bootstrap";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
-const CardPizzaDinamico = ({ productInfo }) => {
+const CardPizzaDinamico = ({ productInfo, agregar }) => {
   const ingredientsMap = productInfo.ingredients.map((ingredients) => (
     <li key={ingredients}>{ingredients}</li>
   ));
 
   return (
-    
     <Card /* style={{ width: "18rem" }} */>
       <Card.Img variant="top" src={productInfo.image} />
       <Card.Body>
@@ -23,7 +23,11 @@ const CardPizzaDinamico = ({ productInfo }) => {
         <Button variant="primary" className="sepbu">
           Ver Mas
         </Button>
-        <Button variant="primary" className="sepbu">
+        <Button
+          variant="primary"
+          className="sepbu"
+          onClick={() => agregar(productInfo)}
+        >
           Añadir al Carro
         </Button>
       </Card.Body>
