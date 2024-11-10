@@ -9,7 +9,7 @@ const CardPizzaDinamico = ({ productInfo, agregar }) => {
 
   return (
     <Card /* style={{ width: "18rem" }} */>
-      <Card.Img variant="top" src={productInfo.image} />
+      <Card.Img variant="top" src={productInfo.img} />
       <Card.Body>
         <Card.Title>{productInfo.name}</Card.Title>
         <Card.Text>
@@ -40,7 +40,7 @@ CardPizzaDinamico.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     ingredients: PropTypes.array,
-    image: PropTypes.string,
+    img: PropTypes.string,
   }),
 };
 export default CardPizzaDinamico;

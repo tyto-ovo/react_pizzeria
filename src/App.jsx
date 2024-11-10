@@ -9,15 +9,32 @@ import { pizzas } from "./assets/pizzas";
 /* import Register from "./components/Register"; */
 import HomeDinamico from "./components/HomeDinamico";
 import { useState } from "react";
+import { useEffect } from "react";
+import Pizza from "./components/Pizza";
 
 function App() {
-  const [listaPizzas, setListaPizzas] = useState(pizzas);
+  /*   const [listaPizzas, setListaPizzas] = useState(pizzas); */
+  const [listaPizzas, setListaPizzas] = useState([]);
+
+  useEffect(() => {
+    consultaApi();
+  }, []);
+
+  const consultaApi = async () => {
+    const url = "http://localhost:5000/api/pizzas";
+    const response = await fetch(url);
+    const data = await response.json();
+
+    setListaPizzas(data);
+  };
   return (
     <>
       <Navbar />
       {/* <Register /> */}
       {/* <Home /> */}
-      <HomeDinamico listaPizzas = {listaPizzas} setListaPizzas={setListaPizzas}/>
+
+      <Pizza />
+      {/* <HomeDinamico listaPizzas={listaPizzas} setListaPizzas={setListaPizzas} /> */}
       <Footer />
     </>
   );

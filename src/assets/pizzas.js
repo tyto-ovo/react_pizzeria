@@ -5,8 +5,7 @@ export const pizzas = [
     price: 5950,
     ingredients: ["mozzarella", "tomates", "jamón", "orégano"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
   },
   {
     id: 2,
@@ -14,8 +13,7 @@ export const pizzas = [
     price: 7950,
     ingredients: ["mozzarella", "jamón serrano", "tomate", "orégano"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
   },
   {
     id: 3,
@@ -23,8 +21,7 @@ export const pizzas = [
     price: 6950,
     ingredients: ["mozzarella", "pepperoni", "orégano"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
   },
   {
     id: 4,
@@ -32,8 +29,7 @@ export const pizzas = [
     price: 5950,
     ingredients: ["mozzarella", "tomates", "albahaca"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
   },
   {
     id: 5,
@@ -41,8 +37,7 @@ export const pizzas = [
     price: 5950,
     ingredients: ["mozzarella", "pollo", "salsa BBQ", "cebolla"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
   },
   {
     id: 6,
@@ -50,7 +45,6 @@ export const pizzas = [
     price: 5950,
     ingredients: ["mozzarella", "piña", "jamón", "choclo"],
     cantidad: 0,
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
+    img: "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
   },
 ];

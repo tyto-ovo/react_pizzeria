@@ -6,7 +6,6 @@ import Cart from "./Cart";
 import { useState } from "react";
 
 function HomeDinamico({ setListaPizzas, listaPizzas }) {
-
   function agregar(comun) {
     const copiaLista = [...listaPizzas];
     let encontrado = copiaLista.findIndex((obj) => obj.id === comun.id);
@@ -23,7 +22,7 @@ function HomeDinamico({ setListaPizzas, listaPizzas }) {
 
     setListaPizzas(copiaLista);
   }
-  const mapPizzas = pizzas.map((pizza) => {
+  const mapPizzas = listaPizzas.map((pizza) => {
     return (
       <Col key={pizza.id}>
         <CardPizzaDinamico productInfo={pizza} agregar={agregar} />;
@@ -40,7 +39,7 @@ function HomeDinamico({ setListaPizzas, listaPizzas }) {
           {mapPizzas}
         </Row>
       </Container>
-      <Cart agregar={agregar} quitar={quitar} />
+      {/* <Cart agregar={agregar} quitar={quitar} /> */}
     </div>
   );
 }
