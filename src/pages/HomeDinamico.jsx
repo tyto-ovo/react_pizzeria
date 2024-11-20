@@ -1,7 +1,7 @@
-import Header from "./Header";
+import Header from "../components/Header";
 import { pizzas } from "../assets/pizzas";
 import { Col, Container, Row } from "react-bootstrap";
-import CardPizzaDinamico from "./CardPizzaDinamico";
+import CardPizzaDinamico from "../components/CardPizzaDinamico";
 import Cart from "./Cart";
 import { useState } from "react";
 
@@ -39,7 +39,7 @@ function HomeDinamico({ setListaPizzas, listaPizzas }) {
           {mapPizzas}
         </Row>
       </Container>
-      {/* <Cart agregar={agregar} quitar={quitar} /> */}
+      <Cart agregar={agregar} quitar={quitar} />
     </div>
   );
 }

@@ -2,15 +2,18 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 import { pizzas } from "./assets/pizzas";
-
-/* import Home from "./components/Home"; */
-/* import Register from "./components/Register"; */
-import HomeDinamico from "./components/HomeDinamico";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Register from "./pages/Register";
+import HomeDinamico from "./pages/HomeDinamico";
 import { useState } from "react";
 import { useEffect } from "react";
-import Pizza from "./components/Pizza";
+import Pizza from "./pages/Pizza";
+import Login from "./pages/Login";
+import Profile from "./components/Profile";
+import NotFound from "./pages/NotFound";
 
 function App() {
   /*   const [listaPizzas, setListaPizzas] = useState(pizzas); */
@@ -30,12 +33,25 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Register /> */}
-      {/* <Home /> */}
 
-      <Pizza />
-      {/* <HomeDinamico listaPizzas={listaPizzas} setListaPizzas={setListaPizzas} /> */}
-      <Footer />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomeDinamico
+              listaPizzas={listaPizzas}
+              setListaPizzas={setListaPizzas}
+            />
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/pizza/p001" element={<Pizza />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }

@@ -36,7 +36,7 @@ const CardPizzaDinamico = ({ productInfo, agregar }) => {
 };
 CardPizzaDinamico.propTypes = {
   productInfo: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     name: PropTypes.string,
     price: PropTypes.number,
     ingredients: PropTypes.array,

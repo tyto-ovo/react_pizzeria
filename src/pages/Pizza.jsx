@@ -15,7 +15,7 @@ function Pizza() {
     setPizzaBanner(data);
   };
 
-  console.log(pizzaBanner.desc);
+  /*   console.log(pizzaBanner.desc); */
   return (
     <div>
       <Card>

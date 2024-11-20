@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const total = 25000;
@@ -28,43 +30,45 @@ function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 sep">
               <li className="nav-item ">
                 <button className="bordes">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Home
-                  </a>
+                  </Link>
                 </button>
               </li>
               <li className="nav-item  bordes">
                 {token ? (
-                  <a className="nav-link active" href="#">
+                  <Link className="nav-link active" to="/profile">
                     {" "}
                     Profile{" "}
-                  </a>
+                  </Link>
                 ) : (
-                  <a className="nav-link active" href="#">
+                  <Link className="nav-link active" to="/login">
                     {" "}
                     Login{" "}
-                  </a>
+                  </Link>
                 )}
               </li>
               <li className="nav-item  bordes">
                 {token ? (
-                  <a className="nav-link active" href="#">
+                  <Link className="nav-link active" to="#">
                     {" "}
                     Logout{" "}
-                  </a>
+                  </Link>
                 ) : (
-                  <a className="nav-link active" href="#">
+                  <Link className="nav-link active" to="/registro">
                     {" "}
                     Register{" "}
-                  </a>
+                  </Link>
                 )}
               </li>
             </ul>
-            <button className="tot">
-              <span className="navbar-text">
-                Total: ${total.toLocaleString("es")}
-              </span>
-            </button>
+            <Button className="tot">
+              <Link to="/cart">
+                <span className="navbar-text">
+                  Total: ${total.toLocaleString("es")}
+                </span>
+              </Link>
+            </Button>
           </div>
         </div>
       </nav>
