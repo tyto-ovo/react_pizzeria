@@ -1,19 +1,39 @@
 import { Button, Container, Row } from "react-bootstrap";
-import { pizzas } from "../assets/pizzas";
+import { useCart } from "../context/CartContext";
 
-const Cart = ({ agregar, quitar }) => {
-  const carritoMap = pizzas.map((info) => {
+const Cart = ({ listaPizzas }) => {
+  const { cart, agregar, quitar, total } = useCart();
+  const encontrarId = (obj) => {
+    const copy = [...listaPizzas];
+    let enc = copy.findIndex((e) => e.id === obj.id);
+
+    return enc;
+  };
+  const carritoMap = listaPizzas.map((info) => {
     return (
       <>
-        {info.cantidad != 0 ? (
+      
+        {cart[`${encontrarId(info)}`].cantidad != 0 ? (
           <div className="carro">
-            <img src={info.image} />
+            <img src={info.img} />
             <div className="carrito">
               <h5>{info.name}</h5>
               <div className="modCant">
-                <Button onClick={() => quitar(info)}>-</Button>
-                <p>Cantidad: {info.cantidad}</p>
-                <Button onClick={() => agregar(info)}>+</Button>
+                <Button
+                  onClick={() => {
+                    quitar(info);
+                  }}
+                >
+                  -
+                </Button>
+                <p>Cantidad: {cart[`${encontrarId(info)}`].cantidad}</p>
+                <Button
+                  onClick={() => {
+                    agregar(info);
+                  }}
+                >
+                  +
+                </Button>
               </div>
               <p>
                 Precio:{" "}
@@ -31,12 +51,7 @@ const Cart = ({ agregar, quitar }) => {
       </>
     );
   });
-  const pizzaTotal = pizzas.filter((pizza) => pizza.cantidad > 0);
-  let total = 0;
-  function calcTotal(p) {
-    pizzaTotal.forEach((e) => (total += e.price * e.cantidad));
-    return total;
-  }
+
   return (
     <div>
       <Container>
@@ -48,7 +63,7 @@ const Cart = ({ agregar, quitar }) => {
             style: "currency",
             currency: "CLP",
             minimumFractionDigits: 0,
-          }).format(calcTotal(pizzaTotal))}
+          }).format(`${total}`)}
         </h3>
         <Button>Pagar</Button>
       </Container>

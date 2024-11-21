@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function Navbar() {
-  const total = 25000;
+  const { total } = useCart();
+
   const token = false;
   return (
     <div>
@@ -62,13 +64,12 @@ function Navbar() {
                 )}
               </li>
             </ul>
-            <Button className="tot">
-              <Link to="/cart">
-                <span className="navbar-text">
-                  Total: ${total.toLocaleString("es")}
-                </span>
-              </Link>
-            </Button>
+
+            <Link to="/cart" className="modificadorLink">
+              <span className="navbar-text">
+                Total: ${total.toLocaleString("es")}
+              </span>
+            </Link>
           </div>
         </div>
       </nav>

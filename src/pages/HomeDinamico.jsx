@@ -4,9 +4,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import CardPizzaDinamico from "../components/CardPizzaDinamico";
 import Cart from "./Cart";
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
-function HomeDinamico({ setListaPizzas, listaPizzas }) {
-  function agregar(comun) {
+function HomeDinamico({ /* setListaPizzas, */ listaPizzas }) {
+  /* const { cart, agregar, quitar, total } = useCart() */
+  /*  function agregar(comun) {
     const copiaLista = [...listaPizzas];
     let encontrado = copiaLista.findIndex((obj) => obj.id === comun.id);
 
@@ -21,11 +23,11 @@ function HomeDinamico({ setListaPizzas, listaPizzas }) {
     copiaLista[encontrado].cantidad -= 1;
 
     setListaPizzas(copiaLista);
-  }
+  } */
   const mapPizzas = listaPizzas.map((pizza) => {
     return (
       <Col key={pizza.id}>
-        <CardPizzaDinamico productInfo={pizza} agregar={agregar} />;
+        <CardPizzaDinamico productInfo={pizza} /* agregar={agregar}  */ />;
       </Col>
     );
   });
@@ -39,7 +41,7 @@ function HomeDinamico({ setListaPizzas, listaPizzas }) {
           {mapPizzas}
         </Row>
       </Container>
-      <Cart agregar={agregar} quitar={quitar} />
+      <Cart listaPizzas={listaPizzas} /* agregar={agregar} quitar={quitar} */ />
     </div>
   );
 }

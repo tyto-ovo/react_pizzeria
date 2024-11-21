@@ -1,8 +1,10 @@
 import { Button, Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
-const CardPizzaDinamico = ({ productInfo, agregar }) => {
+const CardPizzaDinamico = ({ productInfo /* , agregar */ }) => {
+  const { agregar  } = useCart();
   const ingredientsMap = productInfo.ingredients.map((ingredients) => (
     <li key={ingredients}>{ingredients}</li>
   ));
@@ -26,7 +28,9 @@ const CardPizzaDinamico = ({ productInfo, agregar }) => {
         <Button
           variant="primary"
           className="sepbu"
-          onClick={() => agregar(productInfo)}
+          onClick={() => {
+            agregar(productInfo);
+          }}
         >
           Añadir al Carro
         </Button>
