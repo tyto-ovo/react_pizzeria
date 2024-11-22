@@ -1,7 +1,9 @@
 import { Button, Container, Row } from "react-bootstrap";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 const Cart = ({ listaPizzas }) => {
+  const { token } = useUser();
   const { cart, agregar, quitar, total } = useCart();
   const encontrarId = (obj) => {
     const copy = [...listaPizzas];
@@ -12,7 +14,6 @@ const Cart = ({ listaPizzas }) => {
   const carritoMap = listaPizzas.map((info) => {
     return (
       <>
-      
         {cart[`${encontrarId(info)}`].cantidad != 0 ? (
           <div className="carro">
             <img src={info.img} />
@@ -65,7 +66,7 @@ const Cart = ({ listaPizzas }) => {
             minimumFractionDigits: 0,
           }).format(`${total}`)}
         </h3>
-        <Button>Pagar</Button>
+        <Button disabled={!token}>Pagar</Button>
       </Container>
       <hr />
     </div>

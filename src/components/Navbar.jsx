@@ -2,11 +2,13 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 function Navbar() {
   const { total } = useCart();
+  const { token, signIn, signOut } = useUser();
 
-  const token = false;
+  /*   const token = false; */
   return (
     <div>
       <nav
@@ -52,10 +54,14 @@ function Navbar() {
               </li>
               <li className="nav-item  bordes">
                 {token ? (
-                  <Link className="nav-link active" to="#">
+                  <Button
+                    className="nav-link "
+                    onClick={() => signOut()}
+                    to="#"
+                  >
                     {" "}
                     Logout{" "}
-                  </Link>
+                  </Button>
                 ) : (
                   <Link className="nav-link active" to="/registro">
                     {" "}

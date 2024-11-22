@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useUser } from "../context/UserContext";
 
 function Login() {
   const [inputEmailRegistrado, setInputEmailRegistrado] = useState("");
   const [inputPasswordRegistrado, setInputPasswordRegistrado] = useState("");
+  const { signIn } = useUser();
 
   const handleInputEmailRegistrado = (evento) => {
     setInputEmailRegistrado(evento.target.value);
@@ -54,7 +56,7 @@ function Login() {
             />
           </div>
 
-          <button className="btn btn-primary" onClick={handleFormLogin}>
+          <button className="btn btn-primary" onClick={signIn}>
             Iniciar Sesion
           </button>
         </form>

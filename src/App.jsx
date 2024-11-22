@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
 import { pizzas } from "./assets/pizzas";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Home from "./components/Home";
 import Register from "./pages/Register";
 import HomeDinamico from "./pages/HomeDinamico";
@@ -15,10 +15,13 @@ import Login from "./pages/Login";
 import Profile from "./components/Profile";
 import NotFound from "./pages/NotFound";
 import CartProvider, { CartContext } from "./context/CartContext";
+import { useUser } from "./context/UserContext";
 
 function App() {
   /*   const [listaPizzas, setListaPizzas] = useState(pizzas); */
   const [listaPizzas, setListaPizzas] = useState([]);
+  const navigate = useNavigate();
+  const { token } = useUser();
 
   useEffect(() => {
     consultaApi();
@@ -48,8 +51,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/cart" element={<Cart listaPizzas={listaPizzas} />} />
-          <Route path="/pizza/p001" element={<Pizza />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/pizza/:idPizzas" element={<Pizza />} />
+          <Route
+            path="/profile"
+            element={!token ? <Profile /> : <Navigate to="/login" />}
+          />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

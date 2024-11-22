@@ -2,14 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button, Card, CardText, CardTitle } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Pizza() {
-  const [pizzaBanner, setPizzaBanner] = useState([]);
+  const [pizzaBanner, setPizzaBanner] = useState({});
+  const { idPizzas } = useParams();
+  /*   const navigate = useNavigate(); */
+
   useEffect(() => {
     consultaBannerApi();
   }, []);
   const consultaBannerApi = async () => {
-    const url = "http://localhost:5000/api/pizzas/p001";
+    const url = `http://localhost:5000/api/pizzas/${idPizzas}`;
     const response = await fetch(url);
     const data = await response.json();
     setPizzaBanner(data);
